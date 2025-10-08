@@ -10,7 +10,7 @@ import os
 
 # تكوين الصفحة
 st.set_page_config(
-    page_title="الخليفة - لتجهيزات المطاعم والخدمات الفندقية",
+    page_title="ٱلْ خَلِيفَةُ - لتجهيزات المطاعم والخدمات الفندقية",
     page_icon="🏨",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -28,7 +28,7 @@ if 'current_invoice_items' not in st.session_state:
     st.session_state.current_invoice_items = []
 
 # العنوان الرئيسي
-st.title("🏨 الخليفة")
+st.title("🏨 ٱلْ خَلِيفَةُ")
 st.markdown("### لتجهيزات المطاعم والخدمات الفندقية")
 st.markdown("---")
 
@@ -306,10 +306,9 @@ elif page == "إدارة العملاء":
                 phone = st.text_input("رقم الهاتف *")
             
             with col2:
-                email = st.text_input("البريد الإلكتروني")
+                address = st.text_input("العنوان")
                 company = st.text_input("اسم الشركة")
             
-            address = st.text_area("العنوان")
             notes = st.text_area("ملاحظات")
             
             submitted = st.form_submit_button("إضافة العميل")
@@ -319,7 +318,7 @@ elif page == "إدارة العملاء":
                     customer_data = {
                         'name': name,
                         'phone': phone,
-                        'email': email,
+                        'email': None,
                         'company': company,
                         'address': address,
                         'notes': notes
@@ -347,7 +346,6 @@ elif page == "إدارة العملاء":
                     
                     with col1:
                         st.write(f"**الهاتف:** {customer['phone']}")
-                        st.write(f"**البريد الإلكتروني:** {customer['email'] or 'غير محدد'}")
                         st.write(f"**الشركة:** {customer['company'] or 'غير محدد'}")
                     
                     with col2:

@@ -9,7 +9,6 @@ class Customer:
     id: Optional[int] = None
     name: str = ""
     phone: str = ""
-    email: Optional[str] = None
     company: Optional[str] = None
     address: Optional[str] = None
     notes: Optional[str] = None
@@ -30,7 +29,6 @@ class Customer:
             'id': self.id,
             'name': self.name,
             'phone': self.phone,
-            'email': self.email,
             'company': self.company,
             'address': self.address,
             'notes': self.notes,
